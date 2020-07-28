@@ -128,6 +128,7 @@ get_entry_player_picks <- function(entryid = NULL, gw = NULL){
   picks3 <- picks3[order(picks3$entry, picks3$event), ]
 
   return(picks3)
+  
 }
 
 # get_entry_captain()
