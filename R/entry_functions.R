@@ -61,7 +61,7 @@ get_entry_season <- function(entryid = NULL){
       for (i in 1:length(entryid)){
         entry <- jsonlite::fromJSON(paste("https://fantasy.premierleague.com/api/entry/",entryid[i],"/",sep=""))
         entryseason <- jsonlite::fromJSON(paste("https://fantasy.premierleague.com/api/entry/",entryid[i],"/history","/",sep=""))
-        entryseason2 <- rbind(entryseason2,data.frame(entryseason$current,name=paste(entry$player_first_name,entry$player_last_name)))
+        entryseason2 <- rbind(entryseason2,data.frame(entryseason$current,entry=entryid[i],name=paste(entry$player_first_name,entry$player_last_name)))
       }
       return(entryseason2)
     }
